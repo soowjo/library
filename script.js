@@ -5,11 +5,13 @@ let myLibrary = [{Title:'hello',Author:'world',Pages:10,Read:true}];
 
 displayLibrary();
 
-function Book(title, author, pages, read) {
-    this.Title = title;
-    this.Author = author;
-    this.Pages = pages;
-    this.Read = read;
+class Book {
+    constructor(title, author, pages, read) {
+        this.Title = title;
+        this.Author = author;
+        this.Pages = pages;
+        this.Read = read;
+    }
 }
 
 function addBookToLibrary() {
@@ -46,7 +48,7 @@ function displayLibrary() {
                 const inputOut = document.createElement('input');
                 tdOut.appendChild(inputOut);
                 inputOut.setAttribute('type','checkbox');
-                inputOut.checked = (i[j] === true)
+                inputOut.checked = (i[j] === true);
                 inputOut.addEventListener('click', () => {
                     i[j] = !i[j];
                 })
